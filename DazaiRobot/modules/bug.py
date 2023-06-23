@@ -3,10 +3,10 @@ from datetime import datetime
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from FallenRobot import OWNER_ID as owner_id
-from FallenRobot import SUPPORT_CHAT as log,BOT_NAME,START_IMG
-from FallenRobot import pbot as Client
-from FallenRobot.utils.errors import capture_err
+from DazaiRobot import OWNER_ID as owner_id
+from DazaiRobot import SUPPORT_CHAT as log,BOT_NAME,START_IMG
+from DazaiRobot import pbot as Client
+from DazaiRobot.utils.errors import capture_err
 
 
 def content(msg: Message) -> [None, str]:
