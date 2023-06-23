@@ -5,13 +5,13 @@ from telegram import MessageEntity, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, Filters, MessageHandler
 
-from FallenRobot import dispatcher
-from FallenRobot.modules.disable import (
+from DazaiRobot import dispatcher
+from DazaiRobot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from FallenRobot.modules.sql import afk_sql as sql
-from FallenRobot.modules.users import get_user_id
+from DazaiRobot.modules.sql import afk_sql as sql
+from DazaiRobot.modules.users import get_user_id
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
