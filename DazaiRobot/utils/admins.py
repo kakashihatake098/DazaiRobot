@@ -3,7 +3,7 @@ from typing import Callable
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import Message
 
-from FallenRobot import DEV_USERS, DRAGONS, pbot
+from DazaiRobot import DEV_USERS, DRAGONS, pbot
 
 
 def can_change_info(func: Callable) -> Callable:
