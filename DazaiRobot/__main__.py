@@ -756,7 +756,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        Fallen_about_callback, pattern=r"fallen_", run_async=True
+        dazai_about_callback, pattern=r"dazai_", run_async=True
     )
     source_callback_handler = CallbackQueryHandler(
         Source_about_callback, pattern=r"source_", run_async=True
