@@ -3,8 +3,8 @@ from asyncio import sleep
 from pyrogram import filters
 from pyrogram.types import Message
 
-from FallenRobot import pbot
-from FallenRobot.utils.admins import can_restrict
+from DazaiRobot import pbot
+from DazaiRobot.utils.admins import can_restrict
 
 
 @pbot.on_message(filters.command(["zombies", "ghosts"]))
