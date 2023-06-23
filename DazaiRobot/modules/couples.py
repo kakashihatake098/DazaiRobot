@@ -4,8 +4,8 @@ from datetime import datetime
 from pyrogram import filters
 from pyrogram.enums import ChatType
 
-from FallenRobot import pbot
-from FallenRobot.utils.mongo import get_couple, save_couple
+from DazaiRobot import pbot
+from DazaiRobot.utils.mongo import get_couple, save_couple
 
 
 # Date and time
