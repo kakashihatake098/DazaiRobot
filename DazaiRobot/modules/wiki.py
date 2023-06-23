@@ -3,8 +3,8 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext
 from wikipedia.exceptions import DisambiguationError, PageError
 
-from FallenRobot import dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
+from DazaiRobot import dispatcher
+from DazaiRobot.modules.disable import DisableAbleCommandHandler
 
 
 def wiki(update: Update, context: CallbackContext):
