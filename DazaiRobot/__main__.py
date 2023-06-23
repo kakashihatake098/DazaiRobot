@@ -754,10 +754,6 @@ def main():
     settings_callback_handler = CallbackQueryHandler(
         settings_button, pattern=r"stngs_", run_async=True
     )
-
-    about_callback_handler = CallbackQueryHandler(
-        dazai_about_callback, pattern=r"dazai_", run_async=True
-    )
     source_callback_handler = CallbackQueryHandler(
         Source_about_callback, pattern=r"source_", run_async=True
     )
