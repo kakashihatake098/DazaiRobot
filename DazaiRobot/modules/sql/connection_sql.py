@@ -4,7 +4,7 @@ from typing import Union
 
 from sqlalchemy import BigInteger, Boolean, Column, String, UnicodeText
 
-from FallenRobot.modules.sql import BASE, SESSION
+from DazaiRobot.modules.sql import BASE, SESSION
 
 
 class ChatAccessConnectionSettings(BASE):
