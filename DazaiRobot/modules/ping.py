@@ -3,8 +3,8 @@ import time
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext
 
-from FallenRobot import StartTime, dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
+from DazaiRobot import StartTime, dispatcher
+from DazaiRobot.modules.disable import DisableAbleCommandHandler
 
 
 def get_readable_time(seconds: int) -> str:
