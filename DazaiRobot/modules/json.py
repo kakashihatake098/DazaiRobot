@@ -3,8 +3,8 @@ import io
 from telethon import types
 from telethon.tl import functions
 
-from FallenRobot import telethn as tbot
-from FallenRobot.events import register
+from DazaiRobot import telethn as tbot
+from DazaiRobot.events import register
 
 
 async def is_register_admin(chat, user):
