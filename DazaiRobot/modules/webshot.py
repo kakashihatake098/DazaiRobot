@@ -5,8 +5,8 @@ from io import BytesIO
 from pyrogram import filters
 from pyrogram.types import Message
 
-from FallenRobot import pbot as app
-from FallenRobot.utils.post import post
+from DazaiRobot import pbot as app
+from DazaiRobot.utils.post import post
 
 
 async def take_screenshot(url: str, full: bool = False):
