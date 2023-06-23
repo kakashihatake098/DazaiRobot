@@ -7,22 +7,22 @@ from telegram import ParseMode
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler
 
-# from FallenRobot.modules.sql import warns_sql as warnssql
-import FallenRobot.modules.sql.blacklist_sql as blacklistsql
+# from DazaiRobot.modules.sql import warns_sql as warnssql
+import DazaiRobot.modules.sql.blacklist_sql as blacklistsql
 
-# from FallenRobot.modules.sql import cust_filters_sql as filtersql
-# import FallenRobot.modules.sql.welcome_sql as welcsql
-import FallenRobot.modules.sql.locks_sql as locksql
-import FallenRobot.modules.sql.notes_sql as sql
+# from DazaiRobot.modules.sql import cust_filters_sql as filtersql
+# import DazaiRobot.modules.sql.welcome_sql as welcsql
+import DazaiRobot.modules.sql.locks_sql as locksql
+import DazaiRobot.modules.sql.notes_sql as sql
 
-# from FallenRobot.modules.rules import get_rules
-import FallenRobot.modules.sql.rules_sql as rulessql
-from FallenRobot import EVENT_LOGS, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
-from FallenRobot.__main__ import DATA_IMPORT
-from FallenRobot.modules.connection import connected
-from FallenRobot.modules.helper_funcs.alternate import typing_action
-from FallenRobot.modules.helper_funcs.chat_status import user_admin
-from FallenRobot.modules.sql import disable_sql as disabledsql
+# from DazaiRobot.modules.rules import get_rules
+import DazaiRobot.modules.sql.rules_sql as rulessql
+from DazaiRobot import EVENT_LOGS, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
+from DazaiRobot.__main__ import DATA_IMPORT
+from DazaiRobot.modules.connection import connected
+from DazaiRobot.modules.helper_funcs.alternate import typing_action
+from DazaiRobot.modules.helper_funcs.chat_status import user_admin
+from DazaiRobot.modules.sql import disable_sql as disabledsql
 
 
 @user_admin
