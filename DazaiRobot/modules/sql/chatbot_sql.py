@@ -2,41 +2,41 @@ import threading
 
 from sqlalchemy import Column, String
 
-from FallenRobot.modules.sql import BASE, SESSION
+from DazaiRobot.modules.sql import BASE, SESSION
 
 
-class FallenChats(BASE):
-    __tablename__ = "fallen_chats"
+class DazaiChats(BASE):
+    __tablename__ = "dazai_chats"
     chat_id = Column(String(14), primary_key=True)
 
     def __init__(self, chat_id):
         self.chat_id = chat_id
 
 
-FallenChats.__table__.create(checkfirst=True)
+DazaiChats.__table__.create(checkfirst=True)
 INSERTION_LOCK = threading.RLock()
 
 
-def is_fallen(chat_id):
+def is_dazai(chat_id):
     try:
-        chat = SESSION.query(FallenChats).get(str(chat_id))
+        chat = SESSION.query(DazaiChats).get(str(chat_id))
         return bool(chat)
     finally:
         SESSION.close()
 
 
-def set_fallen(chat_id):
+def set_dazai(chat_id):
     with INSERTION_LOCK:
-        fallenchat = SESSION.query(FallenChats).get(str(chat_id))
-        if not fallenchat:
-            fallenchat = FallenChats(str(chat_id))
-        SESSION.add(fallenchat)
+        dazaichat = SESSION.query(DazaiChats).get(str(chat_id))
+        if not dazaichat:
+            dazaichat = DazaiChats(str(chat_id))
+        SESSION.add(dazaichat)
         SESSION.commit()
 
 
-def rem_fallen(chat_id):
+def rem_dazai(chat_id):
     with INSERTION_LOCK:
-        fallenchat = SESSION.query(FallenChats).get(str(chat_id))
-        if fallenchat:
-            SESSION.delete(fallenchat)
+        dazaichat = SESSION.query(DazaiChats).get(str(chat_id))
+        if dazaichat:
+            SESSION.delete(dazaichat)
         SESSION.commit()
