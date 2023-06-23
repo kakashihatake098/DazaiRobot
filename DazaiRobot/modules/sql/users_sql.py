@@ -10,8 +10,8 @@ from sqlalchemy import (
     func,
 )
 
-from FallenRobot import dispatcher
-from FallenRobot.modules.sql import BASE, SESSION
+from DazaiRobot import dispatcher
+from DazaiRobot.modules.sql import BASE, SESSION
 
 
 class Users(BASE):
