@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, distinct, func
 
-from FallenRobot.modules.sql import BASE, SESSION
+from DazaiRobot.modules.sql import BASE, SESSION
 
 
 class GroupLogs(BASE):
