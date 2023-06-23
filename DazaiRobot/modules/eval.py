@@ -9,8 +9,8 @@ from contextlib import redirect_stdout
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from FallenRobot import LOGGER, dispatcher
-from FallenRobot.modules.helper_funcs.chat_status import dev_plus
+from DazaiRobot import LOGGER, dispatcher
+from DazaiRobot.modules.helper_funcs.chat_status import dev_plus
 
 namespaces = {}
 
