@@ -5,10 +5,10 @@ from telegram import TelegramError, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 
-import FallenRobot.modules.sql.users_sql as sql
-from FallenRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from FallenRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from FallenRobot.modules.sql.users_sql import get_all_users
+import DazaiRobot.modules.sql.users_sql as sql
+from DazaiRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from DazaiRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from DazaiRobot.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
