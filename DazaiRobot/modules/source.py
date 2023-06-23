@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from telegram import __version__ as o
 from telethon import __version__ as s
 
-from FallenRobot import BOT_NAME, BOT_USERNAME, OWNER_ID, START_IMG, pbot
+from DazaiRobot import BOT_NAME, BOT_USERNAME, OWNER_ID, START_IMG, pbot
 
 
 @pbot.on_message(filters.command(["repo", "source"]))
@@ -29,7 +29,7 @@ async def repo(_, message: Message):
                     InlineKeyboardButton("ᴅᴇᴠᴇʟᴏᴘᴇʀ", user_id=OWNER_ID),
                     InlineKeyboardButton(
                         "sᴏᴜʀᴄᴇ",
-                        url="https://youtu.be/BBJa32lCaaY",
+                        url="https://dtyjtjgj",
                     ),
                 ]
             ]
