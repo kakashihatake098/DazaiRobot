@@ -4,10 +4,10 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from FallenRobot import telethn as tbot
-from FallenRobot.events import register
+from DazaiRobot import telethn as tbot
+from DazaiRobot.events import register
 
-Anonymous = "Fallen"
+Anonymous = "dazai"
 
 TMP_DOWNLOAD_DIRECTORY = "./"
 telegraph = Telegraph()
