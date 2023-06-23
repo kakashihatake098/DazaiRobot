@@ -29,7 +29,7 @@ async def repo(_, message: Message):
                     InlineKeyboardButton("ᴅᴇᴠᴇʟᴏᴘᴇʀ", user_id=OWNER_ID),
                     InlineKeyboardButton(
                         "sᴏᴜʀᴄᴇ",
-                        url="https://dtyjtjgj",
+                        url="https://github.com/adi6804/DazaiRobot",
                     ),
                 ]
             ]
