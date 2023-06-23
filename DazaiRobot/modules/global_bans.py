@@ -8,8 +8,8 @@ from telegram.error import BadRequest, TelegramError, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html
 
-import FallenRobot.modules.sql.global_bans_sql as sql
-from FallenRobot import (
+import DazaiRobot.modules.sql.global_bans_sql as sql
+from DazaiRobot import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -21,17 +21,17 @@ from FallenRobot import (
     WOLVES,
     dispatcher,
 )
-from FallenRobot.modules.helper_funcs.chat_status import (
+from DazaiRobot.modules.helper_funcs.chat_status import (
     is_user_admin,
     support_plus,
     user_admin,
 )
-from FallenRobot.modules.helper_funcs.extraction import (
+from DazaiRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from FallenRobot.modules.helper_funcs.misc import send_to_list
-from FallenRobot.modules.sql.users_sql import get_user_com_chats
+from DazaiRobot.modules.helper_funcs.misc import send_to_list
+from DazaiRobot.modules.sql.users_sql import get_user_com_chats
 
 GBAN_ENFORCE_GROUP = 6
 
