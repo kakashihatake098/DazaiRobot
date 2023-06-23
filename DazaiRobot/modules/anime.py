@@ -8,8 +8,8 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CallbackQueryHandler
 
-from FallenRobot import DEV_USERS, DRAGONS, pbot, OWNER_ID
-from FallenRobot.modules.disable import DisableAbleCommandHandler
+from DazaiRobot import DEV_USERS, DRAGONS, pbot, OWNER_ID
+from DazaiRobot.modules.disable import DisableAbleCommandHandler
 
 info_btn = "More Information"
 kaizoku_btn = "Kaizoku ☠️"
