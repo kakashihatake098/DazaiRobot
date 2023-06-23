@@ -9,7 +9,7 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from FallenRobot import DEV_USERS, OWNER_ID, dispatcher
+from DazaiRobot import DEV_USERS, OWNER_ID, dispatcher
 
 pretty_errors.mono()
 
