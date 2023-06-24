@@ -26,8 +26,8 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
-import FallenRobot.modules.sql.users_sql as sql
-from FallenRobot import (
+import DazaiRobot.modules.sql.users_sql as sql
+from DazaiRobot import (
     BOT_NAME,
     BOT_USERNAME,
     LOGGER,
@@ -41,9 +41,9 @@ from FallenRobot import (
     telethn,
     updater,
 )
-from FallenRobot.modules import ALL_MODULES
-from FallenRobot.modules.helper_funcs.chat_status import is_user_admin
-from FallenRobot.modules.helper_funcs.misc import paginate_modules
+from DazaiRobot.modules import ALL_MODULES
+from DazaiRobot.modules.helper_funcs.chat_status import is_user_admin
+from DazaiRobot.modules.helper_funcs.misc import paginate_modules
 
 
 def get_readable_time(seconds: int) -> str:
@@ -353,9 +353,9 @@ def help_button(update, context):
         pass
 
 
-def Fallen_about_callback(update: Update, context: CallbackContext):
+def Dazai_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
-    if query.data == "fallen_":
+    if query.data == "dazai_":
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
             text=f"*ʜᴇʏ,*🥀\n  *ᴛʜɪs ɪs {BOT_NAME}*"
@@ -378,7 +378,7 @@ def Fallen_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴩᴩᴏʀᴛ", callback_data="fallen_support"
+                            text="sᴜᴩᴩᴏʀᴛ", callback_data="dazai_support"
                         ),
                         InlineKeyboardButton(
                             text="ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"
@@ -394,12 +394,12 @@ def Fallen_about_callback(update: Update, context: CallbackContext):
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="◁", callback_data="fallen_back"),
+                        InlineKeyboardButton(text="◁", callback_data="dazai_back"),
                     ],
                 ]
             ),
         )
-    elif query.data == "fallen_support":
+    elif query.data == "dazai_support":
         query.message.edit_text(
             text="*๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍᴇ.*"
             f"\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ {BOT_NAME} ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ {BOT_NAME}, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
@@ -420,16 +420,16 @@ def Fallen_about_callback(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ",
-                            url="https://github.com/AnonymousX1025",
+                            url="https://github.com/adi6804/DazaiRobot",
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="◁", callback_data="fallen_"),
+                        InlineKeyboardButton(text="◁", callback_data="dazai_"),
                     ],
                 ]
             ),
         )
-    elif query.data == "fallen_back":
+    elif query.data == "dazai_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
             PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
@@ -455,7 +455,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
 ᴀɴᴅ ᴜsɪɴɢ [sǫʟᴀʟᴄʜᴇᴍʏ](https://www.sqlalchemy.org) ᴀɴᴅ [ᴍᴏɴɢᴏ](https://cloud.mongodb.com) ᴀs ᴅᴀᴛᴀʙᴀsᴇ.
 
 
-*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/AnonymousX1025/FallenRobot)
+*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/adi6804/DazaiRobot)
 
 
 {BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](https://github.com/AnonymousX1025/FallenRobot/blob/master/LICENSE).
@@ -728,12 +728,12 @@ def main():
                 caption=f"""
 ㅤ🥀 {BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
 
-┏•❅────✧❅✦❅✧────❅•┓
+┏•❅──────────────❅•┓
 ㅤ★ **ᴘʏᴛʜᴏɴ :** `{y()}`
 ㅤ★ **ʟɪʙʀᴀʀʏ :** `{telever}`
 ㅤ★ **ᴛᴇʟᴇᴛʜᴏɴ :** `{tlhver}`
 ㅤ★ **ᴩʏʀᴏɢʀᴀᴍ :** `{pyrover}`
-┗•❅────✧❅✦❅✧────❅•┛""",
+┗•❅──────────────❅•┛""",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
@@ -756,7 +756,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        Fallen_about_callback, pattern=r"fallen_", run_async=True
+        Dazai_about_callback, pattern=r"dazai_", run_async=True
     )
     source_callback_handler = CallbackQueryHandler(
         Source_about_callback, pattern=r"source_", run_async=True
