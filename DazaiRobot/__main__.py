@@ -26,8 +26,8 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
-import DazaiRobot.modules.sql.users_sql as sql
-from DazaiRobot import (
+import FallenRobot.modules.sql.users_sql as sql
+from FallenRobot import (
     BOT_NAME,
     BOT_USERNAME,
     LOGGER,
@@ -41,9 +41,9 @@ from DazaiRobot import (
     telethn,
     updater,
 )
-from DazaiRobot.modules import ALL_MODULES
-from DazaiRobot.modules.helper_funcs.chat_status import is_user_admin
-from DazaiRobot.modules.helper_funcs.misc import paginate_modules
+from FallenRobot.modules import ALL_MODULES
+from FallenRobot.modules.helper_funcs.chat_status import is_user_admin
+from FallenRobot.modules.helper_funcs.misc import paginate_modules
 
 
 def get_readable_time(seconds: int) -> str:
@@ -69,33 +69,35 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
 
     return ping_time
-    
-PM_START_TEX = """
-ʜᴇʟʟᴏ `{}`, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \nᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ ʙʀᴏ . . . 
-"""
 
 
 PM_START_TEXT = """
-*ʜᴇʏ*🥀
-๏ ᴛʜɪs ɪs ᴅᴀ𝓩ᴀɪ!
-➻ ɪ'ᴍ ᴀ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs.
-⋆─────────────────────⋆
-[๏](https://te.legra.ph/file/1edb4b832db8a1de2f8d7.jpg) *ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.*
+*ʜᴇʏ* {}, 🥀
+
+*๏ ᴛʜɪs ɪs* {} !
+➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
+
+──────────────────
+*๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.*
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="sᴜᴍᴍᴏɴ ᴍᴇ",
+            text="ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
     [
-        InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴩᴇʀ 🫧", url=f"tg://user?id={OWNER_ID}"),
-        InlineKeyboardButton(text="sᴜᴩᴩᴏʀᴛ 🏥", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text=" ⚡ ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs ⚡", callback_data="help_back"),
+        InlineKeyboardButton(text="❄ ᴀʙᴏᴜᴛ ❄", callback_data="fallen_"),
+        InlineKeyboardButton(text="✨ sᴜᴩᴩᴏʀᴛ ✨", url=f"https://t.me/{SUPPORT_CHAT}"),
+    ],
+    [
+        InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🥀", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="☁️ sᴏᴜʀᴄᴇ ☁️", callback_data="source_"),
     ],
 ]
 
@@ -118,7 +120,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("DazaiRobot.modules." + module_name)
+    imported_module = importlib.import_module("FallenRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -201,24 +203,11 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            
-            usr = update.effective_user
-            lol = update.effective_message.reply_text(
-                PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
+            update.effective_message.reply_sticker(
+                "CAACAgUAAxkBAAJYsmLWRvm70cE-mmxSNCovEf4v1ueJAAIcCAACbMK4VuL4EmZEkq8WKQQ"
             )
-            
-            time.sleep(0.4)
-            lol.edit_text("⚡")
-            time.sleep(1.0)
-            lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
-            time.sleep(0.3)
-            lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
-            time.sleep(0.3)
-            lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
-            time.sleep(0.3)
-            lol.delete()
-            
-            update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
+            update.effective_message.reply_text(
+                PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -353,9 +342,9 @@ def help_button(update, context):
         pass
 
 
-def Dazai_about_callback(update: Update, context: CallbackContext):
+def Fallen_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
-    if query.data == "Dazai_":
+    if query.data == "fallen_":
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
             text=f"*ʜᴇʏ,*🥀\n  *ᴛʜɪs ɪs {BOT_NAME}*"
@@ -378,7 +367,7 @@ def Dazai_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴩᴩᴏʀᴛ", callback_data="Dazai_support"
+                            text="sᴜᴩᴩᴏʀᴛ", callback_data="fallen_support"
                         ),
                         InlineKeyboardButton(
                             text="ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"
@@ -394,12 +383,12 @@ def Dazai_about_callback(update: Update, context: CallbackContext):
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="◁", callback_data="Dazai_back"),
+                        InlineKeyboardButton(text="◁", callback_data="fallen_back"),
                     ],
                 ]
             ),
         )
-    elif query.data == "Dazai_support":
+    elif query.data == "fallen_support":
         query.message.edit_text(
             text="*๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍᴇ.*"
             f"\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ {BOT_NAME} ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ {BOT_NAME}, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
@@ -420,16 +409,16 @@ def Dazai_about_callback(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ",
-                            url="https://github.com/adi6804",
+                            url="https://github.com/AnonymousX1025",
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="◁", callback_data="Dazai_"),
+                        InlineKeyboardButton(text="◁", callback_data="fallen_"),
                     ],
                 ]
             ),
         )
-    elif query.data == "Dazai_back":
+    elif query.data == "fallen_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
             PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
@@ -458,7 +447,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
 *ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/AnonymousX1025/FallenRobot)
 
 
-{BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](https://github.com/adi6804/DazaiRobot/blob/main/LICENSE).
+{BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](https://github.com/AnonymousX1025/FallenRobot/blob/master/LICENSE).
 © 2022 - 2023 | [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/{SUPPORT_CHAT}), ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
 """,
             parse_mode=ParseMode.MARKDOWN,
@@ -726,14 +715,14 @@ def main():
                 chat_id=f"@{SUPPORT_CHAT}",
                 photo=START_IMG,
                 caption=f"""
-ㅤ🖤 {BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
+ㅤ🥀 {BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
 
-┏•❅──────────────❅•┓
+┏•❅────✧❅✦❅✧────❅•┓
 ㅤ★ **ᴘʏᴛʜᴏɴ :** `{y()}`
 ㅤ★ **ʟɪʙʀᴀʀʏ :** `{telever}`
 ㅤ★ **ᴛᴇʟᴇᴛʜᴏɴ :** `{tlhver}`
 ㅤ★ **ᴩʏʀᴏɢʀᴀᴍ :** `{pyrover}`
-┗•❅──────────────❅•┛""",
+┗•❅────✧❅✦❅✧────❅•┛""",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
@@ -754,6 +743,10 @@ def main():
     settings_callback_handler = CallbackQueryHandler(
         settings_button, pattern=r"stngs_", run_async=True
     )
+
+    about_callback_handler = CallbackQueryHandler(
+        Fallen_about_callback, pattern=r"fallen_", run_async=True
+    )
     source_callback_handler = CallbackQueryHandler(
         Source_about_callback, pattern=r"source_", run_async=True
     )
@@ -762,6 +755,7 @@ def main():
 
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
+    dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
