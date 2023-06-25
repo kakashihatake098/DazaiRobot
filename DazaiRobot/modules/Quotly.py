@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from DazaiRobot import arq
-from DazaiRobot.errors import capture_err
+from DazaiRobot.utils.errors import capture_err
 from DazaiRobot import pbot as app
 
 
