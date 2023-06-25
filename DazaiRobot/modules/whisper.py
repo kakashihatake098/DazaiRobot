@@ -98,9 +98,3 @@ async def ws(event):
                 "Oops!\nIt's looks like message got deleted from my server!", alert=True)
         return
     await event.answer(msg, alert=True)
-
-__mod_name__ = "ᴡʜɪsᴘᴇʀ"
-
-__help__ = """
-~ /whisper : send a whisper message to someone
-"""
