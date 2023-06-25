@@ -19,3 +19,7 @@ async def _sax(app,message):
     response = requests.post(url, json=payloads, headers=headers)
     results = response.json()
     await txt.edit(results["message"])
+
+__mod_name__ = "ᴄʜᴀᴛ ɢᴘᴛ"
+__help__ = """
+~ /chat <*your query*>
