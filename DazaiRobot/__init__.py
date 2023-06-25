@@ -4,7 +4,7 @@ import sys
 import time
 
 import telegram.ext as tg
-from python_ARQ import ARQ
+from Python_ARQ import ARQ
 from pyrogram import Client, errors
 from telethon import TelegramClient
 
