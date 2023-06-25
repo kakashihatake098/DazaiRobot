@@ -20,7 +20,7 @@ def allow_groups(update: Update, context: CallbackContext):
         update.effective_message.reply_text(f"Current state: {FallenRobot.ALLOW_CHATS}")
         return
     if args[0].lower() in ["off", "no"]:
-        FallenRobot.ALLOW_CHATS = True
+        DazaiRobot.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
         FallenRobot.ALLOW_CHATS = False
     else:
