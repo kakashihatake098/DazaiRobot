@@ -39,8 +39,12 @@ def reverse(update: Update, context: CallbackContext):
         else:
             update.effective_message.reply_text("Some exception occured")
 
-__mod_name__ = "ʀᴇᴠᴇʀsᴇ"
 reverse_cmd = CommandHandler(
     ["grs", "reverse", "pp", "p", "P", "grab"], reverse, run_async=True
 )
 dispatcher.add_handler(reverse_cmd)
+
+__mod_name__ = "ʀᴇᴠᴇʀsᴇ"
+__help__ = """
+~ /reverse |pp |grs |p : Does a reverse image search of the media which it was replied to.
+"""
