@@ -54,8 +54,8 @@ if ENV:
     TOKEN = os.environ.get("TOKEN", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     WORKERS = int(os.environ.get("WORKERS", 8))
-    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.in")
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "LJMETG-DPHBCX-DGHJCD-TMFIGB-ARQ")    
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.dev")
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "FZPYYN-EKAYFX-RNPLEJ-DRVAPH-ARQ)    
  
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
