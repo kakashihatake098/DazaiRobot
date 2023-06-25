@@ -4,10 +4,10 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Sriasih import SUDOERS, app, arq
-from Sriasih.core.decorators.errors import capture_err
+from DazaiRobot import SUDOERS, app, arq
+from DazaiRobot.core.decorators.errors import capture_err
 
-__MODULE__ = "Quotly"
+__MODULE__ = "ǫᴜᴏᴛʟʏ"
 __HELP__ = """
 /q - To quote a message.
 /q [INTEGER] - To quote more than 1 messages.
