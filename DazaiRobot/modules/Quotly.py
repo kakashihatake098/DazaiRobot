@@ -4,9 +4,9 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from JennieRobot import arq
-from JennieRobot.pyrogramee.errors import capture_err
-from JennieRobot import pbot as app
+from DazaiRobot import arq
+from DazaiRobot.pyrogramee.errors import capture_err
+from DazaiRobot import pbot as app
 
 
 
@@ -61,8 +61,8 @@ async def quotly_func(client, message: Message):
                 [
                     i
                     for i in range(
-                        message.reply_to_message.message_id,
-                        message.reply_to_message.message_id + count,
+                        message.reply_to_message.id,
+                        message.reply_to_message.id + count,
                     )
                 ],
                 replies=0,
