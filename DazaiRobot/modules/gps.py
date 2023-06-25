@@ -14,7 +14,7 @@ async def _(event):
     args = event.pattern_match.group(1)
 
     try:
-        geolocator = Nominatim(user_agent="FallenRobot")
+        geolocator = Nominatim(user_agent="DazaiRobot")
         geoloc = geolocator.geocode(args)
         gm = f"https://www.google.com/maps/search/{geoloc.latitude},{geoloc.longitude}"
         await tbot.send_file(
