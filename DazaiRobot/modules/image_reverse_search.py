@@ -2,7 +2,7 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from DazaiRobot import TOKEN, pbot
+from DazaiRobot import pbot, TOKEN
 
 url = "https://google-reverse-image-api.vercel.app/reverse"
 
@@ -33,13 +33,13 @@ def reverse(update: Update, context: CallbackContext):
                 f"[{result['data']['resultText']}]({result['data']['similarUrl']})",
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("Link", url="https://t.me/Jdthsse")]]
+                    [[InlineKeyboardButton("Link", url="https://t.me/The_Apexx")]]
                 ),
             )
         else:
             update.effective_message.reply_text("Some exception occured")
 
-
+__mod_name__ = "ɪᴍᴀɢᴇ ʀᴇᴠᴇʀsᴇ sᴇᴀʀᴄʜ"
 reverse_cmd = CommandHandler(
     ["google", "reverse", "pp", "p", "P"], reverse, run_async=True
 )
