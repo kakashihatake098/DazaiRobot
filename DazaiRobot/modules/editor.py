@@ -56,7 +56,7 @@ from DazaiRobot.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-erro
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from DazaiRobot.pyrogram import pbot as Client
+from DazaiRobot import pbot as Client
 
 lel = 00000000
 # pylint:disable=import-error
