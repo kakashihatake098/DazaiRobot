@@ -9,13 +9,13 @@ url = "https://google-reverse-image-api.vercel.app/reverse"
 
 def reverse(update: Update, context: CallbackContext):
     if not update.effective_message.reply_to_message:
-        update.effective_message.reply_text("Reply to a photo.")
+        update.effective_message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴘʜᴏᴛᴏ.")
 
     elif not update.effective_message.reply_to_message.photo:
-        update.effective_message.reply_text("Reply to an image.")
+        update.effective_message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ.")
 
     elif update.effective_message.reply_to_message.photo:
-        msg = update.effective_message.reply_text("➠ Searching Your Query.....")
+        msg = update.effective_message.reply_text("➠ sᴇᴀʀᴄʜɪɴɢ ʏᴏᴜʀ ǫᴜᴇʀʏ...")
 
         photo_id = update.effective_message.reply_to_message.photo[-1].file_id
         get_path = requests.post(
@@ -33,13 +33,13 @@ def reverse(update: Update, context: CallbackContext):
                 f"[{result['data']['resultText']}]({result['data']['similarUrl']})",
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("Link", url="https://t.me/JHBots")]]
+                    [[InlineKeyboardButton("ʟɪɴᴋ", url="https://t.me/The_Apexx")]]
                 ),
             )
         else:
             update.effective_message.reply_text("Some exception occured")
 
-__mod_name__ = "ɪᴍᴀɢᴇ ʀᴇᴠᴇʀsᴇ sᴇᴀʀᴄʜ"
+__mod_name__ = "ʀᴇᴠᴇʀsᴇ"
 reverse_cmd = CommandHandler(
     ["grs", "reverse", "pp", "p", "P", "grab"], reverse, run_async=True
 )
