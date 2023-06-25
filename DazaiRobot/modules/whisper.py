@@ -4,7 +4,7 @@ from telethon import events, Button
 import logging
 from telethon.tl.functions.users import GetFullUserRequest as us
 from DazaiRobot import telethn as bot
-from DazaiRobot.__init__.py import BOT_USERNAME
+from DazaiRobot import BOT_USERNAME
 
 logging.basicConfig(level=logging.INFO)
 
