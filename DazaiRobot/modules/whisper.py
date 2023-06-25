@@ -3,8 +3,8 @@
 from telethon import events, Button
 import logging
 from telethon.tl.functions.users import GetFullUserRequest as us
-from Shikimori import telethn as bot
-from Shikimori.vars import BOT_USERNAME
+from DazaiRobot import telethn as bot
+from DazaiRobot.vars import BOT_USERNAME
 
 logging.basicConfig(level=logging.INFO)
 
@@ -98,3 +98,8 @@ async def ws(event):
                 "Oops!\nIt's looks like message got deleted from my server!", alert=True)
         return
     await event.answer(msg, alert=True)
+
+__mod_name__ = "ᴡʜɪsᴘᴇʀ"
+
+__help__ = """
+~ /whisper : send a whisper message to someone 
