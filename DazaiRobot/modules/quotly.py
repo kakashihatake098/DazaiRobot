@@ -2,7 +2,7 @@ from io import BytesIO
 from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
-from JisooX import pbot, arq
+from DazaiRobot import pbot, arq
 
 
 async def quotify(messages: list):
