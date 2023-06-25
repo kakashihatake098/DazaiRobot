@@ -2,7 +2,7 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from Shikimori import TOKEN, dispatcher
+from DazaiRobot import TOKEN, dispatcher
 
 url = "https://google-reverse-image-api.vercel.app/reverse"
 
@@ -39,7 +39,7 @@ def reverse(update: Update, context: CallbackContext):
         else:
             update.effective_message.reply_text("Some exception occured")
 
-
+__mod_name__ = "ɪᴍᴀɢᴇ ʀᴇᴠᴇʀsᴇ sᴇᴀʀᴄʜ"
 reverse_cmd = CommandHandler(
     ["grs", "reverse", "pp", "p", "P", "grab"], reverse, run_async=True
 )
