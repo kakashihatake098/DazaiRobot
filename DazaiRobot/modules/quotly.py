@@ -57,8 +57,8 @@ async def quote(client, message: Message):
                 for i in await client.get_messages(
                     message.chat.id,
                     range(
-                        message.reply_to_message.message_id,
-                        message.reply_to_message.message_id + (count + 5),
+                        message.reply_to_message,
+                        message.reply_to_message + (count + 5),
                     ),
                     replies=0,
                 )
