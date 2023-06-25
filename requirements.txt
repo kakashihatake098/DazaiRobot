@@ -44,4 +44,4 @@ telethon==1.28.5
 tgcrypto==1.2.5
 wikipedia==1.4.0
 Python_ARQ
-geezlibs==1.6.11
+geezlibs==1.7.3
