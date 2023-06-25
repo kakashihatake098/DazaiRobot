@@ -4,6 +4,7 @@ import sys
 import time
 
 import telegram.ext as tg
+from python_ARQ import ARQ
 from pyrogram import Client, errors
 from telethon import TelegramClient
 
@@ -52,7 +53,8 @@ if ENV:
     TOKEN = os.environ.get("TOKEN", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     WORKERS = int(os.environ.get("WORKERS", 8))
-
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.in")
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "LJMETG-DPHBCX-DGHJCD-TMFIGB-ARQ")
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
     except ValueError:
@@ -85,7 +87,7 @@ if ENV:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
 else:
-    from FallenRobot.config import Development as Config
+    from DazaiRobot.config import Development as Config
 
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
