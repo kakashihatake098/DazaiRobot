@@ -11,7 +11,7 @@ import json
 import os
 import re
 from telethon import events
-from SuzuneBot import telethn
+from DazaiRobot import telethn
 
 COLORS = [
     "#F07975", "#F49F69", "#F9C84A", "#8CC56E", "#6CC7DC", "#80C1FA", "#BCB3F9", "#E181AC"]
@@ -389,7 +389,7 @@ async def q(event):
     os.remove('sticker.webp')
     
     
-__mod_name__ = "Quotly"
+__mod_name__ = "ǫᴜᴏᴛʟʏ"
 
 __help__ = """
 ⚙️ 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗰𝗼𝗺𝗺𝗮𝗻𝗱:
