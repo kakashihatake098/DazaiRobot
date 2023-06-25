@@ -64,11 +64,11 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/FallenRobot
+# Copy Python Requirements to /root/DazaiRobot
 RUN git clone https://github.com/adi6804/DazaiRobot /root/DazaiRobot 
 WORKDIR /root/DazaiRobot
 
-#Copy config file to /root/FallenRobot/FallenRobot
+#Copy config file to /root/DazaiRobot/DazaiRobot
 COPY ./DazaiRobot/config.py ./DazaiRobot/config.py* /root/DazaiRobot/DazaiRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
