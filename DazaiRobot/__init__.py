@@ -4,6 +4,8 @@ import sys
 import time
 
 import telegram.ext as tg
+from aiohttp import ClientSession
+from Python_ARQ import ARQ
 from pyrogram import Client, errors
 from telethon import TelegramClient
 
@@ -52,6 +54,8 @@ if ENV:
     TOKEN = os.environ.get("TOKEN", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     WORKERS = int(os.environ.get("WORKERS", 8))
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.in")
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "LJMETG-DPHBCX-DGHJCD-TMFIGB-ARQ")    
  
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
@@ -106,6 +110,8 @@ else:
     TOKEN = Config.TOKEN
     TIME_API_KEY = Config.TIME_API_KEY
     WORKERS = Config.WORKERS
+    ARQ_API_KEY = Config.ARQ_API_KEY
+    ARQ_API_URL = Config.ARQ_API_URL 
 
     try:
         OWNER_ID = int(Config.OWNER_ID)
@@ -149,11 +155,16 @@ telethn = TelegramClient("Dazai", API_ID, API_HASH)
 
 pbot = Client("DazaiRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
+aiohttpsession = ClientSession()
 
 print("[INFO]: Getting Bot Info...")
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
+
+# ARQ Client
+print("[INFO]: INITIALIZING ARQ CLIENT...")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
