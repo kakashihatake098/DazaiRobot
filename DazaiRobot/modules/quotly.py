@@ -4,8 +4,8 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IronMenRobot.utils.errors import capture_err
-from IronMenRobot import arq, pbot as pgram
+from DazaiRobot.utils.errors import capture_err
+from DazaiRobot import arq, pbot as pgram
 
 Q_CMD = filters.command(["quote", "q"])
 
@@ -102,7 +102,7 @@ async def quote(client, message: Message):
         print(e)
 
 
-__mod_name__ = "🙀 ǫᴜᴏᴛʟʏ"
+__mod_name__ = "ǫᴜᴏᴛʟʏ"
 
 
 __help__ = """
