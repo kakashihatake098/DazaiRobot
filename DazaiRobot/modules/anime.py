@@ -588,15 +588,15 @@ KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku, run_async
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo, run_async=True)
 BUTTON_HANDLER = CallbackQueryHandler(button, pattern="anime_.*", run_async=True)
 
-pbot.add_handler(BUTTON_HANDLER)
-pbot.add_handler(ANIME_HANDLER)
-pbot.add_handler(CHARACTER_HANDLER)
-pbot.add_handler(MANGA_HANDLER)
-pbot.add_handler(AIRING_HANDLER)
-pbot.add_handler(USER_HANDLER)
-pbot.add_handler(KAIZOKU_SEARCH_HANDLER)
-pbot.add_handler(KAYO_SEARCH_HANDLER)
-pbot.add_handler(UPCOMING_HANDLER)
+dispatcher.add_handler(BUTTON_HANDLER)
+dispatcher.add_handler(ANIME_HANDLER)
+dispatcher.add_handler(CHARACTER_HANDLER)
+dispatcher.add_handler(MANGA_HANDLER)
+dispatcher.add_handler(AIRING_HANDLER)
+dispatcher.add_handler(USER_HANDLER)
+dispatcher.add_handler(KAIZOKU_SEARCH_HANDLER)
+dispatcher.add_handler(KAYO_SEARCH_HANDLER)
+dispatcher.add_handler(UPCOMING_HANDLER)
 
 __mod_name__ = "ᴀɴɪᴍᴇ"
 __command_list__ = [
