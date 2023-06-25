@@ -4,9 +4,9 @@ STATUS: Code is working. ✅
 
 from pyrogram import filters
 import requests
-from DazaiRobot import dispatcher
+from DazaiRobot import pbot
 
-@dispatcher.on_message(filters.command('latest'))
+@pbot.on_message(filters.command('latest'))
 def schedule(_, message):
     results = requests.get('https://subsplease.org/api/?f=schedule&h=true&tz=Japan').json()
     text = None
