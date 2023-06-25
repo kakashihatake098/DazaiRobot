@@ -25,7 +25,7 @@ from DazaiRobot.modules.helper_funcs.chat_status import (
 from DazaiRobot.modules.helper_funcs.extraction import extract_user
 from DazaiRobot.modules.log_channel import gloggable
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "FallenRobot/elevated_users.json")
+ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "DazaiRobot/elevated_users.json")
 
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
