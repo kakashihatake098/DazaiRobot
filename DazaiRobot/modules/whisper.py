@@ -102,4 +102,5 @@ async def ws(event):
 __mod_name__ = "ᴡʜɪsᴘᴇʀ"
 
 __help__ = """
-~ /whisper : send a whisper message to someone 
+~ /whisper : send a whisper message to someone
+"""
