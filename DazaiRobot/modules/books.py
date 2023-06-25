@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 from telethon import events
 
 from DazaiRobot import telethn as tbot
-from DazaiRobot.vars import BOT_USERNAME
+from DazaiRobot import BOT_USERNAME
 
 @tbot.on(events.NewMessage(pattern="^/book (.*)"))
 async def _(event):
