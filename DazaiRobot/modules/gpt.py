@@ -1,6 +1,6 @@
 import requests
 import json
-from Shikimori import pbot as app
+from DazaiRobot import pbot as app
 from pyrogram import filters
 
 @app.on_message(filters.command("chat"))
