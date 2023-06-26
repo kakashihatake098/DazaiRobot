@@ -396,9 +396,3 @@ async def quott_(event):
 
 
 __mod_name__ = "𝐐ᴜᴏᴛʟʏ"
-
-from Exon.modules.language import gs
-
-
-def get_help(chat):
-    return gs(chat, "quotly_help")
