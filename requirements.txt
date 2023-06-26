@@ -44,3 +44,5 @@ telethon==1.28.5
 tgcrypto==1.2.5
 wikipedia==1.4.0
 Python_ARQ
+cloudscraper==1.2.68
+ffmpeg-python==0.2.0
