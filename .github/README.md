@@ -1,5 +1,5 @@
 <h2 align="center">
-    ──「 𝘿𝘼𝙕𝘼𝙄 ✘ 𝙍𝙊𝘽𝙊𝙏 」──
+    「 𝘿𝘼𝙕𝘼𝙄 ✘ 𝙍𝙊𝘽𝙊𝙏 」
 </h2>
 
 
@@ -35,7 +35,7 @@ _**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [𝘿𝘼𝙕𝘼�
 
 
 <h3 align="center">
-    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ᴠᴘs/ʟᴏᴄᴀʟ 」─
+      『 ᴅᴇᴩʟᴏʏ ᴏɴ ᴠᴘs/ʟᴏᴄᴀʟ 』
 </h3>
 
 <details>
@@ -83,7 +83,4 @@ Press `Ctrl+b` and then `d`
 
 <p align="center">
 <a href="https://telegram.me/The_Apexx"><img src="https://img.shields.io/badge/-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
-</p>
-<p align="center">
-<a href="https://telegram.me/The_Apexx"><img src="https://img.shields.io/badge/-Support%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
