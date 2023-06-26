@@ -1,31 +1,7 @@
-"""
-MIT License
-
-Copyright (c) 2022 ABISHNOI69
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
-
 # ""DEAR PRO PEOPLE,  DON'T REMOVE & CHANGE THIS LINE
-# TG :- @Abishnoi1m
-#     UPDATE   :- Abishnoi_bots
-#     GITHUB :- ABISHNOI69 ""
+# TG :- @none
+#     UPDATE   :- 
+#     GITHUB :- .... ""
 import math
 import os
 import textwrap
@@ -48,9 +24,9 @@ from telegram import (
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler
 from telegram.utils.helpers import mention_html
 
-from Exon import dispatcher
-from Exon import telethn as bot
-from Exon.events import register as asux
+from DazaiRobot import dispatcher
+from DazaiRobot import telethn as bot
+from DazaiRobot.events import register as asux
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
@@ -1020,18 +996,6 @@ async def drawText(image_path, text):
 __mod_name__ = "𝐒ᴛɪᴄᴋᴇʀ"
 
 
-# ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
-
-
-# """
-from Exon.modules.language import gs
-
-
-def get_help(chat):
-    return gs(chat, "sticker_help")
-
-
-# """
 
 STICKERID_HANDLER = CommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = CommandHandler("getsticker", getsticker, run_async=True)
