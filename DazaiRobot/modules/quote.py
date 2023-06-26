@@ -346,7 +346,7 @@ async def quott_(event):
             spli_[0].isdigit() and int(spli_[0]) in range(1, 21)
         ):
             if spli_[0].isdigit():
-                if not event.client._dazai:
+                if not event.client.bot:
                     reply_ = await event.client.get_messages(
                         event.chat_id,
                         min_id=event.reply_to_msg_id - 1,
