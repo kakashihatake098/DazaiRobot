@@ -207,15 +207,15 @@ def start(update: Update, context: CallbackContext):
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             
-            time.sleep(0.4)
+            time.sleep(0.1)
             lol.edit_text("⚡")
-            time.sleep(1.0)
+            time.sleep(1.5)
             lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
-            time.sleep(0.3)
+            time.sleep(0.2)
             lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
-            time.sleep(0.3)
+            time.sleep(0.2)
             lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
-            time.sleep(0.3)
+            time.sleep(0.2)
             lol.delete()
             
             update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
