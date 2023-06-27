@@ -77,10 +77,10 @@ PM_START_TEX = """
 
 PM_START_TEXT = """
 ʜᴇʏ {} 🖤
-๏ ᴛʜɪs ɪs [ᴅᴀ𝓩ᴀɪ](https://te.legra.ph/file/1edb4b832db8a1de2f8d7.jpg)!
-➻ ɪ'ᴍ ᴀ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs.
+㊍ ᴛʜɪs ɪs [ᴅᴀ𝓩ᴀɪ](https://te.legra.ph/file/1edb4b832db8a1de2f8d7.jpg)!
+➠ ɪ'ᴍ ᴀ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴀsᴇᴅ ᴏɴ ʙᴜɴɢᴏ sᴛʀᴀʏ ᴅᴏɢs ᴀɴɪᴍᴇ.
 ⋆─────────────────────⋆
-๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.
+➠ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.
 """
 
 buttons = [
@@ -95,7 +95,7 @@ buttons = [
         InlineKeyboardButton(text="sᴜᴩᴩᴏʀᴛ 🏥", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
-        InlineKeyboardButton(text=" ⚡ ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs ⚡", callback_data="help_back"),
+        InlineKeyboardButton(text="🍁 ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs 🍁", callback_data="help_back"),
     ],
 ]
 
