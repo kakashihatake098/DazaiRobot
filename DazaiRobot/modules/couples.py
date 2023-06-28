@@ -65,10 +65,10 @@ async def couple(_, message):
             c2_id = int(is_selected["c2_id"])
             c1_name = (await pbot.get_users(c1_id)).mention
             c2_name = (await pbot.get_users(c2_id)).mention
-            couple_selection_message = f"""ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :
+            couple_selection_message = f"""⁠[♡](https://te.legra.ph/file/741ba640dc40fcf921505.jpg) ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ:
 
 {c1_name} + {c2_name} = 💗
-ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ [12 ᴀᴍ](https://te.legra.ph/file/741ba640dc40fcf921505.jpg) {tomorrow}"""
+ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ 12 ᴀᴍ {tomorrow}"""
             await pbot.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
