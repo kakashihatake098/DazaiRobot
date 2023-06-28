@@ -31,7 +31,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@pbot.on_message(filters.command(["couple", "couples"]))
+@pbot.on_message(filters.command(["couple", "couples", "shipping"]))
 async def couple(_, message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘ.")
@@ -52,7 +52,7 @@ async def couple(_, message):
             c1_mention = (await pbot.get_users(c1_id)).mention
             c2_mention = (await pbot.get_users(c2_id)).mention
 
-            couple_selection_message = f"""**ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :**
+            couple_selection_message = f"""**ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ**[:](https://te.legra.ph/file/741ba640dc40fcf921505.jpg)
 
 {c1_mention} + {c2_mention} = 💗
 ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ 12 ᴀᴍ {tomorrow}"""
