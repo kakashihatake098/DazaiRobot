@@ -1,5 +1,5 @@
 <h2 align="center">
-    「 𝘿𝘼𝙕𝘼𝙄 ✘ 𝙍𝙊𝘽𝙊𝙏 」
+     『 𝘿𝘼𝙕𝘼𝙄 ✘ 𝙍𝙊𝘽𝙊𝙏 』
 </h2>
 
 
@@ -7,14 +7,14 @@ _**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [𝘿𝘼𝙕𝘼�
 
 
 <p align="center">
-<a href="https://github.com/adi6804/DazaiRobot/stargazers"><img src="https://img.shields.io/github/stars/adi6804/DazaiRobot?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
-<a href="https://github.com/adi6804/DazaiRobot/network/members"> <img src="https://img.shields.io/github/forks/adi6804/DazaiRobot?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
-<a href="https://github.com/adi6804/DazaiRobot/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge" alt="License" /> </a>
+<a href="https://github.com/Anonymous-068/DazaiRobot/stargazers"><img src="https://img.shields.io/github/stars/Anonymous-068/DazaiRobot?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
+<a href="https://github.com/Anonymous-068/DazaiRobot/network/members"> <img src="https://img.shields.io/github/forks/Anonymous-068/DazaiRobot?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
+<a href="https://github.com/Anonymous-068/DazaiRobot/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge" alt="License" /> </a>
 <a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-skyblue?style=for-the-badge&logo=python" alt="Python" /> </a>
 <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=white&label=telethon&logo=python&logoColor=blue&style=for-the-badge" /></a>
 <a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=white&label=pyrogram&logo=python&logoColor=blue&style=for-the-badge" /></a>
-<a href="https://github.com/adi6804/DazaiRobot"> <img src="https://img.shields.io/github/repo-size/adi6804/DazaiRobot?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
-<a href="https://github.com/adi6804/DazaiRobot/commits/Anonymous04"> <img src="https://img.shields.io/github/last-commit/adi6804/DazaiRobot?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
+<a href="https://github.com/Anonymous-068/DazaiRobot"> <img src="https://img.shields.io/github/repo-size/Anonymous-068/DazaiRobot?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
+<a href="https://github.com/Anonymous-068/DazaiRobot/commits/Anonymous"> <img src="https://img.shields.io/github/last-commit/adi6804/DazaiRobot?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 </p>
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -31,7 +31,7 @@ _**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [𝘿𝘼𝙕𝘼�
     『 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 』
 </h3>
 
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/adi6804/DazaiRobot"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Anonymous-068/DazaiRobot"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 
 <h3 align="center">
@@ -43,7 +43,7 @@ _**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [𝘿𝘼𝙕𝘼�
 - <b> ᴠᴘs/ʟᴏᴄᴀʟ ᴅᴇᴘʟᴏʏᴍᴇɴᴛ ᴍᴇᴛʜᴏᴅ </b>
 </h3></summary>
 
-- Get your [Necessary Variables](https://github.com/adi6804/DazaiRobot/blob/master/DazaiRobot/config.py)
+- Get your [Necessary Variables](https://github.com/Anonymous-068/DazaiRobot/blob/master/DazaiRobot/config.py)
 - Upgrade and Update by :
 `sudo apt-get update && sudo apt-get upgrade -y`
 - Install required packages by :
