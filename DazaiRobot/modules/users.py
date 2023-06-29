@@ -5,11 +5,11 @@ from pyrogram.types import Message
 from telegram import TelegramError, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
-import MukeshRobot.modules.no_sql.users_db as user_db 
-from MukeshRobot import pbot as app
-from MukeshRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from MukeshRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from MukeshRobot.modules.no_sql.users_db import get_all_users
+import DazaiRobot.modules.no_sql.users_db as user_db 
+from DazaiRobot import pbot as app
+from DazaiRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from DazaiRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from DazaiRobot.modules.no_sql.users_db import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
