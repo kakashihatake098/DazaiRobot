@@ -7,7 +7,7 @@ from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
 
-from MukeshRobot import (
+from DazaiRobot import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -17,15 +17,15 @@ from MukeshRobot import (
     WOLVES,
     dispatcher,
 )
-from MukeshRobot.modules.helper_funcs.chat_status import (
+from DazaiRobot.modules.helper_funcs.chat_status import (
     dev_plus,
     sudo_plus,
     whitelist_plus,
 )
-from MukeshRobot.modules.helper_funcs.extraction import extract_user
-from MukeshRobot.modules.log_channel import gloggable
+from DazaiRobot.modules.helper_funcs.extraction import extract_user
+from DazaiRobot.modules.log_channel import gloggable
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "MukeshRobot/elevated_users.json")
+ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "DazaiRobot/elevated_users.json")
 
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
