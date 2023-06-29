@@ -65,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/DazaiRobot
-RUN git clone https://github.com/adi6804/DazaiRobot /root/DazaiRobot 
+RUN git clone https://github.com/Anonymous-068/DazaiRobot /root/DazaiRobot 
 WORKDIR /root/DazaiRobot
 
 #Copy config file to /root/DazaiRobot/DazaiRobot
