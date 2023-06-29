@@ -4,8 +4,8 @@ from datetime import datetime
 from pyrogram import filters
 from pyrogram.enums import ChatType
 
-from FallenRobot import pbot
-from FallenRobot.utils.mongo import get_couple, save_couple
+from DazaiRobot import pbot
+from DazaiRobot.utils.mongo import get_couple, save_couple
 
 
 # Date and time
@@ -52,10 +52,10 @@ async def couple(_, message):
             c1_mention = (await pbot.get_users(c1_id)).mention
             c2_mention = (await pbot.get_users(c2_id)).mention
 
-            couple_selection_message = f"""**Couple of the day :**
+            couple_selection_message = f"""**ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :**
 
-{c1_mention} + {c2_mention} = 😘
-__New couple of the day can be chosen at 12AM {tomorrow}__"""
+{c1_mention} + {c2_mention} = 💗
+ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ {tomorrow}"""
             await pbot.send_message(message.chat.id, text=couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
             await save_couple(chat_id, today, couple)
@@ -65,10 +65,10 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
             c2_id = int(is_selected["c2_id"])
             c1_name = (await pbot.get_users(c1_id)).mention
             c2_name = (await pbot.get_users(c2_id)).mention
-            couple_selection_message = f"""Couple of the day :
+            couple_selection_message = f"""ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :
 
-{c1_name} + {c2_name} = 😘
-__New couple of the day can be chosen at 12AM {tomorrow}__"""
+{c1_name} + {c2_name} = 💗
+ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ {tomorrow}"""
             await pbot.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
