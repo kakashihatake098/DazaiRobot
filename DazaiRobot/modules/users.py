@@ -9,7 +9,7 @@ import DazaiRobot.modules.no_sql.users_db as user_db
 from DazaiRobot import pbot as app
 from DazaiRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
 from DazaiRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from DazaiRobot.modules.no_sql.users_db import get_all_users
+from DazaiRobot.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
