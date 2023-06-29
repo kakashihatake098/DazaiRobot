@@ -1,14 +1,15 @@
 from io import BytesIO
 from time import sleep
-
+from pyrogram import filters
+from pyrogram.types import Message
 from telegram import TelegramError, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
-
-import DazaiRobot.modules.sql.users_sql as sql
-from DazaiRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from DazaiRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from DazaiRobot.modules.sql.users_sql import get_all_users
+import MukeshRobot.modules.no_sql.users_db as user_db 
+from MukeshRobot import pbot as app
+from MukeshRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from MukeshRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from MukeshRobot.modules.no_sql.users_db import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
@@ -23,26 +24,23 @@ def get_user_id(username):
     if username.startswith("@"):
         username = username[1:]
 
-    users = sql.get_userid_by_name(username)
+    users = user_db.get_userid_by_name(username)
 
     if not users:
         return None
 
-    elif len(users) == 1:
-        return users[0].user_id
+    if len(users) == 1:
+        return users[0]["_id"]
 
-    else:
-        for user_obj in users:
-            try:
-                userdat = dispatcher.bot.get_chat(user_obj.user_id)
-                if userdat.username == username:
-                    return userdat.id
+    for user_obj in users:
+        try:
+            userdat = dispatcher.bot.get_chat(user_obj["_id"])
+            if userdat.username == username:
+                return userdat.id
 
-            except BadRequest as excp:
-                if excp.message == "Chat not found":
-                    pass
-                else:
-                    LOGGER.exception("Error extracting user ID")
+        except BadRequest as excp:
+            if excp.message != "Chat not found":
+                LOGGER.exception("Error extracting user ID")
 
     return None
 
@@ -60,7 +58,7 @@ def broadcast(update: Update, context: CallbackContext):
             to_user = True
         else:
             to_group = to_user = True
-        chats = sql.get_all_chats() or []
+        chats = user_db.get_all_chats() or []
         users = get_all_users()
         failed = 0
         failed_user = 0
@@ -68,7 +66,7 @@ def broadcast(update: Update, context: CallbackContext):
             for chat in chats:
                 try:
                     context.bot.sendMessage(
-                        int(chat.chat_id),
+                        int(chat["chat_id"]),
                         to_send[1],
                         parse_mode="MARKDOWN",
                         disable_web_page_preview=True,
@@ -80,7 +78,7 @@ def broadcast(update: Update, context: CallbackContext):
             for user in users:
                 try:
                     context.bot.sendMessage(
-                        int(user.user_id),
+                        int(user["_id"]),
                         to_send[1],
                         parse_mode="MARKDOWN",
                         disable_web_page_preview=True,
@@ -89,7 +87,7 @@ def broadcast(update: Update, context: CallbackContext):
                 except TelegramError:
                     failed_user += 1
         update.effective_message.reply_text(
-            f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}."
+            f"ʙʀᴏᴀᴅᴄᴀsᴛ  ᴄᴏᴍᴘʟᴇᴛᴇ.\nɢʀᴏᴜᴘs ғᴀɪʟᴇᴅ : {failed}.\nᴜsᴇʀs ғᴀɪʟᴇᴅ : {failed_user}."
         )
 
 
@@ -97,10 +95,10 @@ def log_user(update: Update, context: CallbackContext):
     chat = update.effective_chat
     msg = update.effective_message
 
-    sql.update_user(msg.from_user.id, msg.from_user.username, chat.id, chat.title)
+    user_db.update_user(msg.from_user.id, msg.from_user.username, chat.id, chat.title)
 
     if msg.reply_to_message:
-        sql.update_user(
+        user_db.update_user(
             msg.reply_to_message.from_user.id,
             msg.reply_to_message.from_user.username,
             chat.id,
@@ -108,13 +106,13 @@ def log_user(update: Update, context: CallbackContext):
         )
 
     if msg.forward_from:
-        sql.update_user(msg.forward_from.id, msg.forward_from.username)
+        user_db.update_user(msg.forward_from.id, msg.forward_from.username)
 
 
 @sudo_plus
 def chats(update: Update, context: CallbackContext):
-    all_chats = sql.get_all_chats() or []
-    chatfile = "List of chats.\n0. Chat name | Chat ID | Members count\n"
+    all_chats = user_db.get_all_chats() or []
+    chatfile = "ʟɪsᴛs ᴏғ ᴄʜᴀᴛ.\n0. ᴄʜᴀᴛ ɴᴀᴍᴇ | ᴄʜᴀᴛ ɪᴅ | ᴍᴇᴍʙᴇʀs ᴄᴏᴜɴᴛ\n"
     P = 1
     for chat in all_chats:
         try:
@@ -133,7 +131,7 @@ def chats(update: Update, context: CallbackContext):
         update.effective_message.reply_document(
             document=output,
             filename="groups_list.txt",
-            caption="Here be the list of groups in my database.",
+            caption="ʜᴇʀᴇ ʙᴇ ᴛʜᴇ  ʟɪsᴛ ᴏғ ɢʀᴏᴜᴘs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ",
         )
 
 
@@ -151,16 +149,16 @@ def __user_info__(user_id):
         return """<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>???</code>"""
     if user_id == dispatcher.bot.id:
         return """<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>???</code>"""
-    num_chats = sql.get_user_num_chats(user_id)
+    num_chats = user_db.get_user_num_chats(user_id)
     return f"""<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>{num_chats}</code>"""
 
 
 def __stats__():
-    return f"• {sql.num_users()} users, across {sql.num_chats()} chats"
+    return f"• {user_db.num_users()} ᴜsᴇʀs, ᴀᴄʀᴏss {user_db.num_chats()} ᴄʜᴀᴛs"
 
 
 def __migrate__(old_chat_id, new_chat_id):
-    sql.migrate_chat(old_chat_id, new_chat_id)
+    user_db.migrate_chat(old_chat_id, new_chat_id)
 
 
 __help__ = ""  # no help string
@@ -181,5 +179,5 @@ dispatcher.add_handler(BROADCAST_HANDLER)
 dispatcher.add_handler(CHATLIST_HANDLER)
 dispatcher.add_handler(CHAT_CHECKER_HANDLER, CHAT_GROUP)
 
-__mod_name__ = "Users"
+__mod_name__ = "Usᴇʀs"
 __handlers__ = [(USER_HANDLER, USERS_GROUP), BROADCAST_HANDLER, CHATLIST_HANDLER]
