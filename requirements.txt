@@ -1,12 +1,12 @@
 aiofiles==23.1.0
 aiohttp==3.8.4
-apscheduler==3.10.1
+apscheduler==3.6.3
 asyncio==3.4.3
 beautifulsoup4==4.12.2
 bing_image_downloader==1.1.2
 bleach==6.0.0
 bs4==0.0.1
-cachetools==5.3.1
+cachetools==4.2.2
 countryinfo==0.1.2
 currencyconverter==0.17.9
 dateparser==1.1.8
@@ -43,6 +43,3 @@ telegraph==2.2.0
 telethon==1.28.5
 tgcrypto==1.2.5
 wikipedia==1.4.0
-Python_ARQ
-cloudscraper==1.2.71
-ffmpeg-python==0.2.0
